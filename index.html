@@ -2,55 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Analysis Data</title>
   <link rel="stylesheet" href="./health_analysis.css">
 </head>
 <body>
-   <nav><h1>Health Analysis Census</h1>
-<ul>
-  <li><a href="./index.html" id="home">Home </a></li>
-  <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
-  <li><input type="text" id="conditionInput" placeholder="Enter a health condition">  </li>
-  <li><button id='btnSearch'>Search</button>
-  </li>
+  <nav>
+    <h1>Health Analysis Census</h1>
+    <ul>
+      <li><a href="./index.html" id="home">Home</a></li>
+      <li><a href="./health_contact.html" id="contact">Contact Us</a></li>
+      <li class="search-container">
+        <input type="text" id="conditionInput" placeholder="Enter a health condition (e.g. Thyroid)">
+        <button id="btnSearch">Search</button>
+      </li>
+    </ul>
+  </nav>
 
-</ul>
-</nav>
-<div class="container">
-<div class="analysisForm">
-<h1>Healthcare Data Analysis</h1>
-<div>
-<label for="name">Name:</label>
-<input type="text" id="name">
-</div>
-<div>
-<label>Gender:</label>
-<label for="male">Male</label>
-<input type="radio" name="gender" id="male" value="Male">
-<label for="female">Female</label>
-<input type="radio" name="gender" id="female" value="Female">
-</div>
-<div>
-<label for="age">Age:</label>
-<input type="number" id="age">
-</div>
-<div>
-<label for="condition">Condition:</label>
-<select id="condition">
-  <option value="">Select condition</option>
-  <option value="Diabetes">Diabetes</option>
-  <option value="Thyroid">Thyroid</option>
-  <option value="High Blood Pressure">High Blood Pressure</option>
-</select>
-</div>
-<button id="addPatient">Add Patient</button>
-<h2>Analysis Report</h2>
-<div id="report"></div>
-</div>
-<div class="searchCondition">
-    <div id="result"></div>
-</div>
-</div>
-<script src="./health_analysis.js"></script>
+  <main class="container">
+    <section class="analysisForm glass-panel">
+      <h2>Healthcare Data Analysis</h2>
+      
+      <form id="addPatientForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter patient name" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="radio-group">
+            <label for="male">
+              <input type="radio" name="gender" id="male" value="Male" required> Male
+            </label>
+            <label for="female">
+              <input type="radio" name="gender" id="female" value="Female" required> Female
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" placeholder="Enter patient age" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="condition">Condition:</label>
+          <select id="condition" required>
+            <option value="">Select condition</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Thyroid">Thyroid</option>
+            <option value="High Blood Pressure">High Blood Pressure</option>
+          </select>
+        </div>
+        
+        <button type="submit" id="addPatient">Add Patient</button>
+      </form>
+
+      <h2>Analysis Report</h2>
+      <div id="report">
+        Waiting for patient data...
+      </div>
+    </section>
+
+    <section class="searchCondition glass-panel">
+      <h2>Condition Information</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;">Search for a condition using the top bar to view details.</p>
+      <div id="result">
+        <!-- Results will be displayed here dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <script src="./health_analysis.js"></script>
 </body>
 </html>
