@@ -44,8 +44,10 @@ Because this is a pure front-end application without build tools, running it is 
 *(Note: To experience the dynamic `fetch` API functionality without triggering local file CORS policies, it is recommended to run the project using a local development server like Live Server for VS Code or `npx serve`.)*
 
 ## 📱 Screenshots
+<img width="1910" height="899" alt="image" src="https://github.com/user-attachments/assets/3121674e-9fa2-4b71-b1f5-7146cecc4199" />
+<img width="1912" height="900" alt="image" src="https://github.com/user-attachments/assets/4a9cb136-9071-4332-b79b-8107f72a72e4" />
 
-*(Add screenshots of your application here)*
+
 
 ---
 *This project was developed as a portfolio piece to demonstrate proficiency in front-end fundamentals and modern UI design.*
